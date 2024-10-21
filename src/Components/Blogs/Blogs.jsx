@@ -7,14 +7,14 @@ const Blogs = () => {
     useEffect(() => {
         fetch('bloge.json')
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setBlogs(data))
             .catch(error => console.log(error))
     }, [])
 
 
     return (
-        <div>
-            <h1>hello Blogs</h1>
+        <div className="md:col-span-2 border-2">
+            <h1>hello Blogs: {blogs.length}</h1>
         </div>
     );
 };
